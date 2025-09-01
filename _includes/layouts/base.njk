@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Mélodie & Cie</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Découvrez l'univers musical de Mélodie & Cie, votre destination pour la musique et la culture.{% endif %}">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    {% if css %}<link rel="stylesheet" href="/assets/css/{{ css }}.css">{% endif %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">🎵 Mélodie & Cie</a>
+                <nav>
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/evenements">Événements</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {{ content | safe }}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mélodie & Cie</h3>
+                    <p>Votre partenaire musical de confiance pour tous vos événements et projets culturels.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/services">Production musicale</a></li>
+                        <li><a href="/services">Événements culturels</a></li>
+                        <li><a href="/services">Formation musicale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 contact@melodie-et-cie.fr</li>
+                        <li>📞 +33 1 23 45 67 89</li>
+                        <li>📍 Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mélodie & Cie. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

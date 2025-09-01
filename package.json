@@ -1,0 +1,26 @@
+{
+  "name": "eleventy-lab",
+  "version": "1.0.0",
+  "description": "Environnement de test dans le cadre de mon apprentissage de Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaiPe/eleventy-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LaiPe/eleventy-lab/issues"
+  },
+  "homepage": "https://github.com/LaiPe/eleventy-lab#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
