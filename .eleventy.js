@@ -1,10 +1,7 @@
-module.exports = function(eleventyConfig) {
+export default async function(eleventyConfig) {
     // Copier les assets statiques - spécification explicite
     eleventyConfig.addPassthroughCopy("assets/**/*");
     eleventyConfig.addPassthroughCopy("assets/css/**/*");
-    
-    // Configuration des dossiers
-    eleventyConfig.addPassthroughCopy("_includes");
     
     // Filtres personnalisés
     eleventyConfig.addFilter("date", function(value) {
@@ -14,7 +11,7 @@ module.exports = function(eleventyConfig) {
     // Configuration des dossiers de sortie
     return {
         dir: {
-            input: ".",
+            input: "src",
             output: "_site",
             includes: "_includes"
         },
