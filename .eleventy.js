@@ -1,7 +1,6 @@
 export default async function(eleventyConfig) {
-    // Copier les assets statiques - spécification explicite
-    eleventyConfig.addPassthroughCopy("assets/**/*");
-    eleventyConfig.addPassthroughCopy("assets/css/**/*");
+    // Copier les assets statiques
+    eleventyConfig.addPassthroughCopy("src/assets/**/*");
     
     // Filtres personnalisés
     eleventyConfig.addFilter("date", function(value) {
