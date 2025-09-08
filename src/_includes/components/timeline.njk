@@ -1,4 +1,4 @@
-{% macro timeline(steps=[], orientation="horizontal") -%}
+{% macro timeline(steps=[]) -%}
   <style>
   /* ===== PROCESS TIMELINE (scoped) ===== */
   .proc-timeline {
@@ -88,30 +88,6 @@
     right: -2.6rem;
   }
 
-  /* Vertical layout tweaks */
-  .proc-timeline.vertical {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 3.5rem;
-  }
-  .proc-timeline.vertical::before {
-    left: 32px;
-    right: auto;
-    top: 2rem;
-    bottom: 2rem;
-    width: 6px;
-    height: auto;
-  }
-  .proc-timeline.vertical .proc-card {
-    width: calc(100% - 3.5rem);
-    margin-left: 1rem;
-  }
-  .proc-timeline.vertical .proc-card::after {
-    left: 32px;
-    top: 1.25rem;
-    transform: translateY(0);
-  }
-
   /* responsiveness */
   @media (max-width: 560px) {
     .proc-timeline { 
@@ -135,7 +111,7 @@
   }
   </style>
 
-  <div class="proc-timeline {{ 'vertical' if orientation == 'vertical' else '' }}">
+  <div class="proc-timeline">
     {% for step in steps %}
       <article class="proc-card" aria-label="Étape {{ loop.index }}">
         <div class="proc-card__step">Étape {{ loop.index }}</div>
