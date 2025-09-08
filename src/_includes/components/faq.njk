@@ -1,0 +1,115 @@
+{% macro faq(items=[], allowMultiple=false, idPrefix="faq") -%}
+  <style>
+  /* ===== ACCORDION FAQ (scoped) ===== */
+  .acc {
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .acc__item { 
+    background: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+    overflow: hidden; 
+  }
+  .acc__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .acc__trigger:hover {
+    background: rgba(0,0,0,0.02);
+  }
+  .acc__icon { 
+    width: 1.2rem; 
+    height: 1.2rem; 
+    flex: 0 0 1.2rem; 
+    display: inline-grid; 
+    place-items: center; 
+    font-weight: 700; 
+    transition: transform 0.2s ease;
+  }
+  .acc__panel { 
+    padding: 0 1.2rem 1rem; 
+    color: #444; 
+    line-height: 1.6; 
+  }
+  </style>
+  
+  <div class="acc" id="{{ idPrefix }}">
+    {% for item in items %}
+      <div class="acc__item">
+        <button
+          class="acc__trigger"
+          aria-expanded="false"
+          aria-controls="{{ idPrefix }}-panel-{{ loop.index }}"
+          id="{{ idPrefix }}-btn-{{ loop.index }}">
+          <span>{{ item.question }}</span>
+          <span class="acc__icon" aria-hidden="true">+</span>
+        </button>
+        <div 
+          id="{{ idPrefix }}-panel-{{ loop.index }}" 
+          class="acc__panel" 
+          role="region" 
+          aria-labelledby="{{ idPrefix }}-btn-{{ loop.index }}" 
+          hidden>
+          {{ item.response | safe }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <script>
+    const root = document.getElementById('{{ idPrefix }}');
+    if (!root) console.error("FAQ root element not found");
+    
+    const triggers = Array.from(root.querySelectorAll('.acc__trigger'));
+    const allowMultiple = {{ allowMultiple | string | lower }};
+    
+    triggers.forEach(btn => {
+        console.log(btn); 
+        btn.addEventListener('click', function(){
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Si allowMultiple est false, fermer les autres accordéons
+            if (!allowMultiple) {
+            triggers.forEach(b => {
+                if (b !== this) {
+                b.setAttribute('aria-expanded', 'false');
+                const panel = document.getElementById(b.getAttribute('aria-controls'));
+                if (panel) panel.hidden = true;
+                const icon = b.querySelector('.acc__icon');
+                if (icon) {
+                    icon.textContent = '+';
+                    icon.style.transform = 'rotate(0deg)';
+                }
+                }
+            });
+            }
+            
+            // Basculer l'état de l'accordéon cliqué
+            const panel = document.getElementById(this.getAttribute('aria-controls'));
+            this.setAttribute('aria-expanded', String(!expanded));
+            if (panel) panel.hidden = expanded;
+            
+            const icon = this.querySelector('.acc__icon');
+            if (icon) {
+            icon.textContent = expanded ? '+' : '−';
+            icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+            }
+        });
+    });
+  </script>
+{%- endmacro %}
