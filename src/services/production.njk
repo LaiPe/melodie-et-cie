@@ -1,0 +1,130 @@
+---
+layout: layouts/base.njk
+title: Production Musicale
+description: Production musicale sur mesure — composition, enregistrement, mix et mastering pour artistes et projets audiovisuels.
+subtitle-hero: Production musicale sur mesure pour artistes, labels et projets audiovisuels.
+offres:
+  - emoji: "🎵"
+    title: Production
+    descr: Composition, arrangement et direction artistique pour transformer vos idées en morceaux aboutis.
+  - emoji: "🎙️"
+    title: Enregistrement
+    descr: Prise de son voix et instruments en studio ou à distance, gestion des sessions et édition.
+  - emoji: "🎚️"
+    title: Mix
+    descr: Mixage précis et musical pour clarté, punch et profondeur; retours itératifs inclus.
+  - emoji: "🎛️"
+    title: Mastering
+    descr: Mastering adapté au format final (streaming, radio, vidéo) avec contrôle de loudness et métadonnées.
+  - emoji: "🔊"
+    title: Sound design
+    descr: Création d'ambiances, textures et effets sur mesure pour musique et projets audiovisuels.
+  - emoji: "🌍"
+    title: Collaboration à distance
+    descr: Échange de stems/sessions, revision en ligne et gestion de projet à distance.
+processus:
+  - title: Brief
+    descr: Échanges sur références, objectifs et budget.
+  - title: Pré-production
+    descr: Maquettes et structure pour valider la direction artistique.
+  - title: Tracking
+    descr: Enregistrement voix/instruments, comping et nettoyage.
+  - title: Mix
+    descr: Mixage avec retours (2 révisions incluses par défaut).
+  - title: Master
+    descr: Mastering final et préparation des fichiers de livraison.
+  - title: Livraison
+    descr: Envoi des stems, mix final, master et notes de session.
+projets:
+  - title: "Projet A — Single Pop"
+    descr: "Production complète, mix et mastering — lien: /audio/projet-a"
+  - title: "Projet B — Bande-son Pub"
+    descr: "Sound design et mix — lien: /audio/projet-b"
+  - title: "Projet C — EP Indie"
+    descr: "Enregistrement et mix — lien: /audio/projet-c"
+forfaits:
+  - title: Simple
+    price: "À partir de 150€"
+    details: Session d'enregistrement ou mix simple (1 piste vocale, 1 révision).
+  - title: Full
+    price: "À partir de 800€"
+    details: Production complète (composition, tracking, mix).
+  - title: Premium
+    price: "Sur devis"
+    details: Forfait sur-mesure (multi-tracking, mix premium, mastering, livrables étendus).
+specstechniques:
+  daw: "Ableton Live / Pro Tools / Logic Pro"
+  formats: "WAV 24-bit (44.1–96 kHz), MP3 320 kbps"
+  livrables: "Stems, mix stéréo, master, notes de session"
+faq:
+  - question: Combien de temps pour une production complète ?
+    reponse: Généralement 2–6 semaines selon la complexité et la disponibilité.
+  - question: Combien de révisions sont incluses ?
+    reponse: 2 révisions incluses pour le mix; options supplémentaires possibles.
+  - question: Travaillez-vous à distance ?
+    reponse: Oui — échange de stems, sessions DAW et réunions en ligne.
+  - question: Qui garde les droits sur la musique ?
+    reponse: Les conditions des droits sont précisées dans le contrat; la livraison inclut un master prêt à diffuser.
+  - question: Quels fichiers livrez-vous ?
+    reponse: WAV 24-bit (stems), mix stéréo, MP3 320 pour promotion, et métadonnées si demandé.
+seo_keywords:
+  - production musicale
+  - mixage
+  - mastering
+  - enregistrement studio
+  - sound design
+cta_label: Demander un devis
+cta_link: /contact
+---
+
+{% from "components/hero.njk" import hero %}
+{% from "components/gallery.njk" import gallery %}
+{% from "components/timeline.njk" import timeline %}
+
+{{ 
+  hero(
+    "Production Musicale", 
+    "Production musicale sur mesure — du premier sketch au master prêt à diffuser. Approche hybride analogique/numérique, axée sur l'émotion et la clarté sonore.", 
+    [
+      { label: "Découvrir notre processus", href: "/production#processus" },
+      { label: "Nos Tarifs", href: "/production#tarifs", style: "secondary" }
+    ]
+  ) 
+}}
+
+<section id="offres" class="section">
+  <h2 class="text-center">Nos Offres</h2>
+  {{ gallery(3, offres) }}
+</section>
+
+<section id="processus" class="section">
+  <h2 class="text-center">Notre Processus</h2>
+  <p class="text-center">
+    Chaque projet est unique. Voici les étapes clés de notre processus de production musicale, conçues pour garantir un résultat à la hauteur de vos attentes.
+  </p>
+  {{ timeline(processus, "horizontal") }}
+</section>
+
+## Exemples de projets
+{% for pr in projets %}
+- **{{ pr.title }}** — {{ pr.descr }}
+{% endfor %}
+
+## Forfaits (aperçu)
+{% for f in forfaits %}
+- **{{ f.title }}** — {{ f.price }} — {{ f.details }}
+{% endfor %}
+
+## Spécifications techniques
+- DAW : {{ specstechniques.daw }}
+- Formats : {{ specstechniques.formats }}
+- Livrables : {{ specstechniques.livrables }}
+
+## FAQ
+{% for q in faq %}
+- **Q:** {{ q.question }}  
+  **R:** {{ q.reponse }}
+{% endfor %}
+
+## Contact
+{{ cta_label }} — [Contact]({{ cta_link }})

@@ -1,0 +1,81 @@
+{% macro gallery(columns=3, cards=[]) -%}
+    <style>
+    /* ===== GRID GALLERY (scoped) ===== */
+    .grid-gallery {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(var(--cols, 3), minmax(240px, 1fr));
+    }
+
+    .grid-gallery__card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .grid-gallery__card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .grid-gallery__card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .grid-gallery__card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .grid-gallery__icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .grid-gallery__title {
+        color: #3498db;
+        margin-bottom: 0.75rem;
+        font-size: 1.25rem;
+    }
+
+    .grid-gallery__descr {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .grid-gallery { grid-template-columns: repeat(2, minmax(200px,1fr)); }
+    }
+    @media (max-width: 480px) {
+        .grid-gallery { grid-template-columns: 1fr; }
+    }
+    </style>
+    <div class="grid-gallery" style="--cols: {{ columns | int }};">
+        {% for card in cards %}
+            {%- if card.href -%}
+            <a href="{{ card.href }}" class="service-link">
+            {%- endif -%}
+            <article class="grid-gallery__card">
+                <div class="grid-gallery__icon">{{ card.emoji }}</div>
+                <h3 class="grid-gallery__title">{{ card.title }}</h3>
+                <p class="grid-gallery__descr">{{ card.descr }}</p>
+            </article>
+            {%- if card.href -%}
+            </a>
+            {%- endif -%}
+        {% endfor %}
+    </div>
+{%- endmacro %}

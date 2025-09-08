@@ -1,7 +1,10 @@
 export default async function(eleventyConfig) {
     // Copier les assets statiques
-    eleventyConfig.addPassthroughCopy("src/assets/**/*");
+    eleventyConfig.addPassthroughCopy("src/assets");
     
+    // Watch des assets pour rebuild automatique
+    eleventyConfig.addWatchTarget("src/assets");
+
     // Filtres personnalisés
     eleventyConfig.addFilter("date", function(value) {
         return new Date(value).toLocaleDateString('fr-FR');

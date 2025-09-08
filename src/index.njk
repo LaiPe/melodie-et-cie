@@ -1,45 +1,26 @@
 ---
 layout: layouts/base.njk
 title: Accueil
-description: Découvrez l'univers musical de Mélodie & Cie, votre destination pour la musique et la culture.
+description: Votre partenaire musical de confiance pour tous vos événements et projets culturels
 css: index
 ---
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content text-center">
-        <h1>Bienvenue chez Mélodie & Cie</h1>
-        <p>Votre partenaire musical de confiance pour tous vos événements et projets culturels</p>
-        <div class="hero-buttons">
-            <a href="/services" class="btn">Découvrir nos services</a>
-            <a href="/contact" class="btn btn-secondary">Nous contacter</a>
-        </div>
-    </div>
+{% from "components/hero.njk" import hero %}
+{% from "components/gallery.njk" import gallery %}
+
+{{ hero("Bienvenue chez Mélodie & Cie", description, [
+  { label: "Découvrir nos services", href: "/services" },
+  { label: "Nous contacter", href: "/contact", style: "secondary" }
+]) }}
+
+<section id="services" class="section">
+    {{ gallery(3, [
+        { emoji: "🎼", title: "Production Musicale", descr: "Création, enregistrement et production de musique professionnelle pour tous vos projets.", href: "/services/production" },
+        { emoji: "🎭", title: "Événements Culturels", descr: "Organisation et gestion complète d'événements musicaux et culturels sur mesure.", href: "/services/evenements" },
+        { emoji: "🎓", title: "Formation Musicale", descr: "Cours et ateliers de musique pour tous niveaux, de débutant à avancé.", href: "/services/formation" }
+    ]) }}
 </section>
 
-<!-- Services Section -->
-<section class="section">
-    <h2 class="text-center">Nos Services</h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon">🎼</div>
-            <h3>Production Musicale</h3>
-            <p>Création, enregistrement et production de musique professionnelle pour tous vos projets.</p>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-icon">🎭</div>
-            <h3>Événements Culturels</h3>
-            <p>Organisation et gestion complète d'événements musicaux et culturels sur mesure.</p>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-icon">🎓</div>
-            <h3>Formation Musicale</h3>
-            <p>Cours et ateliers de musique pour tous niveaux, de débutant à avancé.</p>
-        </div>
-    </div>
-</section>
 
 <!-- About Section -->
 <section class="section about-section">
