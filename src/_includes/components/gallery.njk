@@ -1,17 +1,18 @@
-{% macro gallery(columns=3, cards=[]) -%}
+{% macro gallery(columns=3,rem=1, cards=[]) -%}
     <style>
     /* ===== GRID GALLERY (scoped) ===== */
     .grid-gallery {
+        font-size: var(--rem, 1rem);
         display: grid;
-        gap: 2rem;
+        gap: 2em;
         grid-template-columns: repeat(var(--cols, 3), minmax(240px, 1fr));
     }
 
     .grid-gallery__card {
         background: white;
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 2em;
+        border-radius: 1em;
+        box-shadow: 0 0.4em 1em rgba(0,0,0,0.1);
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
@@ -24,7 +25,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
+        height: 0.3em;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         transform: scaleX(0);
         transition: transform 0.3s ease;
@@ -32,7 +33,7 @@
 
     .grid-gallery__card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        box-shadow: 0 0.8em 1.5em rgba(0,0,0,0.15);
     }
 
     .grid-gallery__card:hover::before {
@@ -40,15 +41,15 @@
     }
 
     .grid-gallery__icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+        font-size: 3em;
+        margin-bottom: 1em;
         display: block;
     }
 
     .grid-gallery__title {
         color: #3498db;
-        margin-bottom: 0.75rem;
-        font-size: 1.25rem;
+        margin-bottom: 0.75em;
+        font-size: 1.25em;
     }
 
     .grid-gallery__descr {
@@ -63,7 +64,7 @@
         .grid-gallery { grid-template-columns: 1fr; }
     }
     </style>
-    <div class="grid-gallery" style="--cols: {{ columns | int }};">
+    <div class="grid-gallery" style="--cols: {{ columns | int }}; --rem: {{ rem | float }}rem;">
         {% for card in cards %}
             {%- if card.href -%}
             <a href="{{ card.href }}" class="service-link">
