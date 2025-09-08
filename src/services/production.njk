@@ -51,13 +51,26 @@ projets:
 forfaits:
   - title: Simple
     price: "À partir de 150€"
-    details: Session d'enregistrement ou mix simple (1 piste vocale, 1 révision).
+    details:
+      - Production
+      - Enregistrement
+      - Mix
   - title: Full
     price: "À partir de 800€"
-    details: Production complète (composition, tracking, mix).
+    details:
+      - Production
+      - Enregistrement
+      - Mix
+      - Mastering
   - title: Premium
     price: "Sur devis"
-    details: Forfait sur-mesure (multi-tracking, mix premium, mastering, livrables étendus).
+    details:
+      - Production
+      - Enregistrement
+      - Mix
+      - Mastering
+      - Sound design
+      - Collaboration à distance
 specstechniques:
   daw: "Ableton Live / Pro Tools / Logic Pro"
   formats: "WAV 24-bit (44.1–96 kHz), MP3 320 kbps"
@@ -87,6 +100,7 @@ cta_link: /contact
 {% from "components/gallery.njk" import gallery %}
 {% from "components/timeline.njk" import timeline %}
 {% from "components/projects.njk" import projects %}
+{% from "components/pricing.njk" import pricing %}
 
 {{ 
   hero(
@@ -117,11 +131,11 @@ cta_link: /contact
   {{ projects(3, projets) }}
 </section>
 
-## Forfaits (aperçu)
-{% for f in forfaits %}
-- **{{ f.title }}** — {{ f.price }} — {{ f.details }}
-{% endfor %}
-
+<section id="forfaits" class="section">
+  <h2 class="text-center">Forfaits</h2>
+  {{ pricing(3, forfaits, offres) }}
+</section>
+  
 ## Spécifications techniques
 - DAW : {{ specstechniques.daw }}
 - Formats : {{ specstechniques.formats }}
