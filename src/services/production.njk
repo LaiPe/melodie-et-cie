@@ -36,12 +36,18 @@ processus:
   - title: Livraison
     descr: Envoi des stems, mix final, master et notes de session.
 projets:
-  - title: "Projet A — Single Pop"
-    descr: "Production complète, mix et mastering — lien: /audio/projet-a"
-  - title: "Projet B — Bande-son Pub"
-    descr: "Sound design et mix — lien: /audio/projet-b"
-  - title: "Projet C — EP Indie"
-    descr: "Enregistrement et mix — lien: /audio/projet-c"
+  - emoji: "🎤"
+    title: "Clara Lune — Single 'Étoiles Filantes'"
+    descr: "Composition, enregistrement voix et mixage pour une artiste pop émergente."
+    href: /audio/clara-lune-etoiles-filantes
+  - emoji: "📺"
+    title: "Campagne Renault — Bande-son TV"
+    descr: "Sound design original et mixage pour spot publicitaire national."
+    href: /audio/renault-bandeson-tv
+  - emoji: "🎸"
+    title: "Les Évadés — EP 'Horizons'"
+    descr: "Production, enregistrement multi-instruments et mastering pour un groupe indie."
+    href: /audio/les-evades-horizons
 forfaits:
   - title: Simple
     price: "À partir de 150€"
@@ -80,6 +86,7 @@ cta_link: /contact
 {% from "components/hero.njk" import hero %}
 {% from "components/gallery.njk" import gallery %}
 {% from "components/timeline.njk" import timeline %}
+{% from "components/projects.njk" import projects %}
 
 {{ 
   hero(
@@ -105,10 +112,10 @@ cta_link: /contact
   {{ timeline(processus) }}
 </section>
 
-## Exemples de projets
-{% for pr in projets %}
-- **{{ pr.title }}** — {{ pr.descr }}
-{% endfor %}
+<section id="projets" class="section">
+  <h2 class="text-center">Exemples de projets</h2>
+  {{ projects(3, projets) }}
+</section>
 
 ## Forfaits (aperçu)
 {% for f in forfaits %}
