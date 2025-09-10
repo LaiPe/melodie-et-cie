@@ -1,0 +1,40 @@
+{
+    "upcoming_events": [
+        {
+            "emoji": "🎵",
+            "title": "Concert Printemps — Orchestre invité",
+            "date": "2025-05-15",
+            "location": "Salle des fêtes, Lyon",
+            "descr": "Programme classique et créations locales. Billets bientôt disponibles.",
+            "href": "/events/printemps-2025"
+        },
+        {
+            "emoji": "🎶",
+            "title": "Atelier Songwriting",
+            "date": "2025-06-02",
+            "location": "Studio Mélodie & Cie",
+            "descr": "Atelier pratique pour auteurs-compositeurs — places limitées.",
+            "href": "/events/atelier-songwriting"
+        }
+    ],
+    "programmable_events": [
+        {
+            "emoji": "🎤",
+            "title": "Concert sur-mesure",
+            "duration": "1–2 heures",
+            "price": "Sur devis",
+            "descr": "Prestation clé en main pour entreprises, mariages et associations.",
+            "cta_label": "Demander un devis",
+            "cta_link": "/contact"
+        },
+        {
+            "emoji": "🎓",
+            "title": "Atelier pédagogique",
+            "duration": "2 heures",
+            "price": "À partir de 250€",
+            "descr": "Ateliers pour écoles et centres culturels — modules adaptables.",
+            "cta_label": "Réserver un atelier",
+            "cta_link": "/contact"
+        }
+    ]
+}

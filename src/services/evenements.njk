@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Événements Culturels
+description: "Organisation d'événements culturels — concerts, festivals, ateliers et résidences artistiques."
+css: services/evenements
+---
+
+{% from "components/services/upcoming_event.njk" import upcoming_event %}
+{% from "components/caroussel.njk" import caroussel %}
+
+<section id="upcoming" class="section events-section">
+  <h1 class="text-center">Événements à venir</h1>
+
+  {% call(slide) caroussel(upcoming_events, {autoplay: true, interval: 6000}) %}
+    {{ upcoming_event(slide) }}
+  {% endcall %}
+</section>
+
+<section id="programmable" class="section">
+  <h2 class="text-center">Événements programmables</h2>
+  <p class="text-center">Commandez l'une de nos prestations clés en main ou demandez une adaptation sur-mesure.</p>
+
+  <div class="events-grid" role="list">
+    {% for p in programmable_events %}
+      <article class="event-card" role="listitem" aria-labelledby="pkg-{{ loop.index }}-title">
+        <div class="event-emoji" aria-hidden="true">{{ p.emoji }}</div>
+        <h3 id="pkg-{{ loop.index }}-title" class="event-title">{{ p.title }}</h3>
+        <div class="event-meta">
+          {% if p.duration %}<span class="event-duration">{{ p.duration }}</span>{% endif %}
+          {% if p.price %} — <span class="event-price">{{ p.price }}</span>{% endif %}
+        </div>
+        <p class="event-desc">{{ p.descr }}</p>
+        {% if p.cta_link %}
+          <a class="btn" href="{{ p.cta_link }}">{{ p.cta_label or "Contact" }}</a>
+        {% endif %}
+      </article>
+    {% else %}
+      <p class="text-center">Aucune prestation disponible pour le moment.</p>
+    {% endfor %}
+  </div>
+</section>

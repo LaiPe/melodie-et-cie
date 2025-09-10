@@ -1,0 +1,139 @@
+{% macro caroussel(slides=[], options={}) -%}
+<style>
+    /* ===== CAROUSEL (scoped) ===== */
+    .carousel {
+        position: relative;
+        max-width: 1100px;
+        margin: 1.25rem auto 0;
+        overflow: visible;
+    }
+
+    .carousel-viewport {
+        overflow: hidden;
+        border-radius: 12px;
+        margin: 0 4rem;
+        box-shadow: 0 6px 6px rgba(0,0,0,0.08);
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 400ms ease;
+        width: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* controls */
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255,255,255,0.9);
+        border: 0;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        box-shadow: 0 6px 6px rgba(0,0,0,0.08);
+        cursor: pointer;
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+
+    .carousel-btn.prev { left: 0; }
+    .carousel-btn.next { right: 0; }
+
+    /* dots */
+    .carousel-dots { 
+        display: flex; 
+        gap: 0.5rem; 
+        justify-content: center; 
+        margin-top: 1.25rem; 
+        padding-bottom: 1rem;
+    }
+    .carousel-dot {
+        width: 10px; 
+        height: 10px; 
+        border-radius: 50%; 
+        background: #dbe6ff; 
+        border: 0; 
+        cursor: pointer;
+    }
+    .carousel-dot.is-active { background: linear-gradient(90deg,#667eea,#764ba2); }
+
+    @media (max-width: 640px) {
+    }
+</style>
+
+<div class="carousel" data-autoplay="{{ options.autoplay | default(true) }}" data-interval="{{ options.interval | default(6000) }}">
+    <button class="carousel-btn prev" aria-label="Précédent">‹</button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+        {% for s in slides %}
+          <div class="carousel-slide" aria-hidden="{{ 'false' if loop.first else 'true' }}">
+            {% if caller %}
+              {{ caller(s) }}
+            {% else %}
+              {{ s }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Suivant">›</button>
+
+    <div class="carousel-dots" role="tablist">
+      {% for s in slides %}
+        <button class="carousel-dot{% if loop.first %} is-active{% endif %}" data-index="{{ loop.index0 }}" aria-label="Aller à l'élément {{ loop.index }}"></button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const carousel = document.querySelector('.carousel');
+    if(!carousel) return;
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+    let index = 0;
+    const autoplay = carousel.dataset.autoplay === 'true';
+    const interval = parseInt(carousel.dataset.interval,10) || 5000;
+    let timer = null;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      slides.forEach((s,i) => s.setAttribute('aria-hidden', i === index ? 'false' : 'true'));
+      dots.forEach((d,i) => d.classList.toggle('is-active', i === index));
+    }
+
+    function go(n){
+      index = (n + slides.length) % slides.length;
+      update();
+    }
+
+    prevBtn && prevBtn.addEventListener('click', ()=> { go(index-1); resetTimer(); });
+    nextBtn && nextBtn.addEventListener('click', ()=> { go(index+1); resetTimer(); });
+    dots.forEach(d => d.addEventListener('click', (e)=> { go(parseInt(d.dataset.index,10)); resetTimer(); }));
+
+    function startTimer(){ if(autoplay) timer = setInterval(()=> go(index+1), interval); }
+    function stopTimer(){ if(timer){ clearInterval(timer); timer = null; } }
+    function resetTimer(){ stopTimer(); startTimer(); }
+
+    carousel.addEventListener('mouseenter', stopTimer);
+    carousel.addEventListener('mouseleave', startTimer);
+
+    // initial setup: set track width by CSS; ensure one slide visible at a time
+    update();
+    startTimer();
+    window.addEventListener('resize', update);
+  })();
+  </script>
+{%- endmacro %}
