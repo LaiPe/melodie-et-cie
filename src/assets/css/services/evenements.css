@@ -1,3 +1,28 @@
 section:first-of-type {
     margin-top: 0;
 }
+
+.events-grid {
+    margin-top: 2rem;
+}
+
+.events-grid .event-card {
+    padding: 0.5rem 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.events-grid .event-card .btn {
+    width: 160px;
+}
+.events-grid .event-card .btn:hover {
+    box-shadow: none;
+    transform: scale(1.02);
+}
+
+.events-grid .event-card .event-emoji, 
+.events-grid .event-card h3, 
+.events-grid .event-card .event-meta,
+.events-grid .event-card .event-desc {
+    margin: 0;
+}
