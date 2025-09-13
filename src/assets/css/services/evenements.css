@@ -9,6 +9,7 @@ section:first-of-type {
 .events-grid .event-card {
     padding: 0.5rem 1rem;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
