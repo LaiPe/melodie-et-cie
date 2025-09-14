@@ -68,7 +68,9 @@
         </div>
 
         <div class="event-card__image" role="img" aria-label="Illustration pour {{ event.title }}">
-            <!-- illustration / background image: ajouter une image via CSS background-image plus tard -->
+            {% if event.image %}
+                <img src="{{ event.image }}" alt="Illustration pour {{ event.title }}" style="width:100%; height:100%; object-fit:cover;"/>
+            {% endif %}
         </div>
     </article>
 {% endmacro -%}
