@@ -1,0 +1,11 @@
+.services-intro {
+    max-width: 800px;
+    margin: 0rem auto 2rem auto;
+    padding: 0 1rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+}

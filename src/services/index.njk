@@ -2,5 +2,22 @@
 layout: layouts/base.njk
 title: Accueil
 description: Découvrez les services de Mélodie & Cie, votre destination pour la musique et la culture.
+css: services/index
 ---
-<p>Bienvenue sur la page des services de Mélodie & Cie. Nous offrons une gamme complète de services pour répondre à vos besoins musicaux et culturels.</p>
+
+{% from "components/gallery.njk" import gallery %}
+
+<section class="services-intro">
+  <h1 class="text-center">Nos Services</h1>
+  <p class="text-center">
+    Chez Mélodie & Cie, nous mettons notre passion et notre expertise au service de la musique et de la culture. Notre équipe de professionnels expérimentés vous accompagne dans tous vos projets, qu'il s'agisse de production musicale, d'organisation d'événements ou de formation. Nous nous engageons à offrir des prestations de grande qualité, personnalisées et adaptées à vos besoins, pour faire de chaque expérience un moment unique et enrichissant.
+  </p> 
+</section>
+
+<section id="services" class="section">
+    {{ gallery(3, 1,[
+        { emoji: "🎼", title: "Production Musicale", descr: "Création, enregistrement et production de musique professionnelle pour tous vos projets.", href: "/services/production" },
+        { emoji: "🎭", title: "Événements Culturels", descr: "Organisation et gestion complète d'événements musicaux et culturels sur mesure.", href: "/services/evenements" },
+        { emoji: "🎓", title: "Formation Musicale", descr: "Cours et ateliers de musique pour tous niveaux, de débutant à avancé.", href: "/services/formation" }
+    ]) }}
+</section>
