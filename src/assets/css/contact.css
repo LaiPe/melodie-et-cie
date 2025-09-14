@@ -1,0 +1,66 @@
+main .container {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-info {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0.4em 1em rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  width: 60%;
+}
+
+.staff-list {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.contact-form-section {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0.4em 1em rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  width: 40%;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.4em;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form button.btn {
+  margin-top: 1rem;
+  background: #764ba2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.4em;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 0 0.5rem;
+  }
+  .contact-info,
+  .contact-form-section {
+    padding: 1.2rem 0.7rem;
+  }
+}

@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Contactez Mélodie & Cie pour toute demande d'information, d'inscription ou de partenariat.
+css: contact
+---
+
+
+<section class="contact-info">
+    <h1>À propos de Mélodie & Cie</h1>
+    <p>
+        Fondée par des passionnés de musique, Mélodie & Cie s'est donnée pour mission de transmettre l'amour de la musique à travers l'enseignement, la production et l'organisation d'événements. Notre philosophie repose sur l'écoute, la bienveillance et l'exigence de qualité, afin d'accompagner chaque élève et chaque projet avec attention et professionnalisme.<br><br>
+        Notre équipe est composée de professeurs diplômés, de musiciens professionnels et de techniciens expérimentés, tous animés par la volonté de partager leur savoir-faire et leur passion. Ensemble, nous créons un environnement propice à l'épanouissement artistique et à la réussite de chacun.
+    </p>
+    <ul class="staff-list">
+        <li><strong>Marie Dupont</strong> – Directrice & Professeure de piano</li>
+        <li><strong>Julien Martin</strong> – Professeur de guitare</li>
+        <li><strong>Claire Lefèvre</strong> – Professeure de violon</li>
+        <li><strong>Lucas Bernard</strong> – Professeur de batterie</li>
+        <li><strong>Sophie Morel</strong> – Professeure de chant</li>
+        <li><strong>Camille Petit</strong> – Professeure d'éveil musical</li>
+        <li><strong>Antoine Girard</strong> – Professeur de saxophone</li>
+        <li><strong>Isabelle Laurent</strong> – Professeure de clarinette</li>
+        <li><strong>Pauline Robert</strong> – Professeure de flûte traversière</li>
+    </ul>
+</section>
+
+<section class="contact-form-section">
+    <h2>Formulaire de contact</h2>
+    <form class="contact-form" method="post" action="#">
+        <div class="form-group">
+        <label for="name">Nom et prénom</label>
+        <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+        <label for="reason">Raison du contact</label>
+        <select id="reason" name="reason" required>
+            <option value="">-- Sélectionnez une raison --</option>
+            <option value="question">Question générale</option>
+            <option value="inscription">Demande d'inscription</option>
+            <option value="cours">Renseignement sur les cours</option>
+            <option value="evenement">Organisation d'événement</option>
+            <option value="partenariat">Proposition de partenariat</option>
+            <option value="autre">Autre</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Envoyer</button>
+    </form>
+</section>
