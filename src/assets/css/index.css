@@ -7,11 +7,6 @@
     gap: 2rem;
 }
 
-.service-link {
-    text-decoration: none;
-    color: inherit;
-}
-
 .service-card {
     background: white;
     padding: 2rem;
