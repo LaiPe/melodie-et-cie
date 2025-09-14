@@ -8,32 +8,31 @@ css: services/formation
 
 {% from "components/gallery.njk" import gallery %}
 
-<main class="container">
-  <section>
-    <h1 class="text-center">Nos Formations Musicales</h1>
-    <p class="text-center formation-desc">
-      L'école Mélodie & Cie propose un enseignement musical adapté à tous les âges et tous les niveaux.<br>
-      Découvrez la liste des instruments que vous pouvez apprendre avec nos professeurs passionnés.
-    </p>
-    {{ gallery(
-      3, 1, instruments | map("gallery")
-      ) }}
-  </section>
 
-  <section class="section" id="cours-details">
-    <h2 class="text-center">Détail des cours par instrument</h2>
+<section>
+  <h1 class="text-center">Nos Formations Musicales</h1>
+  <p class="text-center formation-desc">
+    L'école Mélodie & Cie propose un enseignement musical adapté à tous les âges et tous les niveaux.<br>
+    Découvrez la liste des instruments que vous pouvez apprendre avec nos professeurs passionnés.
+  </p>
+  {{ gallery(
+    3, 1, instruments | map("gallery")
+    ) }}
+</section>
 
-    {% for instrument in instruments %}
-      <article id="{{ instrument.id }}" class="formation-detail">
-        <h3>{{ instrument.emoji }} {{ instrument.name }}</h3>
-        <p>
-          <strong>Professeur :</strong> {{ instrument.teachers | join(", ") }}<br>
-          <strong>Styles :</strong> {{ instrument.styles | join(", ") }}<br>
-          <strong>Description :</strong><br>
-          {{ instrument.longDescription }}
-        </p>
-        <a href="/contact" class="btn">Contactez-nous pour {{ instrument.name }}</a>
-      </article>
-    {% endfor %}
-  </section>
-</main>
+<section class="section" id="cours-details">
+  <h2 class="text-center">Détail des cours par instrument</h2>
+
+  {% for instrument in instruments %}
+    <article id="{{ instrument.id }}" class="formation-detail">
+      <h3>{{ instrument.emoji }} {{ instrument.name }}</h3>
+      <p>
+        <strong>Professeur :</strong> {{ instrument.teachers | join(", ") }}<br>
+        <strong>Styles :</strong> {{ instrument.styles | join(", ") }}<br>
+        <strong>Description :</strong><br>
+        {{ instrument.longDescription }}
+      </p>
+      <a href="/contact" class="btn">Contactez-nous pour {{ instrument.name }}</a>
+    </article>
+  {% endfor %}
+</section>
