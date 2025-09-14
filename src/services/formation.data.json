@@ -1,0 +1,85 @@
+{
+  "instruments": [
+    {
+      "emoji": "🎹",
+      "name": "Piano",
+      "shortDescription": "Cours d’initiation, classique ou moderne. Travail technique, interprétation et accompagnement.",
+      "longDescription": "Le cours de piano s’adresse à tous, du débutant au pianiste confirmé. Vous apprendrez la lecture de partitions, la technique des mains, l’indépendance des doigts, l’interprétation d’œuvres classiques ou modernes, ainsi que l’accompagnement. Les séances sont adaptées à vos objectifs : loisir, perfectionnement, préparation aux concours ou examens. Travail sur le rythme, l’harmonie, l’improvisation et le jeu en groupe possible. Marie propose également des ateliers d’improvisation et d’accompagnement pour les élèves souhaitant explorer le jazz ou la chanson.",
+      "teachers": ["Marie Dupont"],
+      "styles": ["Classique", "Jazz", "Musiques de films", "Pop"],
+      "hash": "#piano"
+    },
+    {
+      "emoji": "🎸",
+      "name": "Guitare",
+      "shortDescription": "Guitare acoustique, électrique ou basse. Apprentissage des accords, solos, rythmiques et styles variés.",
+      "longDescription": "Nos cours de guitare couvrent l’acoustique, l’électrique et la basse. Vous apprendrez les bases (accords, gammes, rythmiques), le jeu en solo, l’improvisation, la lecture de tablatures et partitions, ainsi que l’exploration de styles variés (rock, jazz, blues, pop, classique). Julien adapte sa pédagogie à chaque élève, propose des ateliers de groupe et prépare ceux qui le souhaitent à jouer en groupe ou à monter un répertoire personnel.",
+      "teachers": ["Julien Martin"],
+      "styles": ["Rock", "Blues", "Jazz", "Pop", "Classique"],
+      "hash": "#guitare"
+    },
+    {
+      "emoji": "🎻",
+      "name": "Violon",
+      "shortDescription": "Découverte ou perfectionnement du violon, répertoire classique ou moderne, posture et musicalité.",
+      "longDescription": "Le violon est enseigné dès le plus jeune âge. Travail de la posture, de la justesse, de la technique d’archet, du vibrato et de la musicalité. Répertoire classique, musiques traditionnelles ou modernes. Claire propose également des séances de musique d’ensemble et d’initiation à l’improvisation pour les plus avancés.",
+      "teachers": ["Claire Lefèvre"],
+      "styles": ["Classique", "Musiques traditionnelles", "Musiques de films"],
+      "hash": "#violon"
+    },
+    {
+      "emoji": "🥁",
+      "name": "Batterie",
+      "shortDescription": "Rythmes, coordination, technique et jeu en groupe pour tous niveaux.",
+      "longDescription": "Apprenez la batterie à travers des exercices de coordination, de rythme, de technique de caisse claire, de jeu sur partitions et d’improvisation. Travail sur différents styles (rock, jazz, funk, pop), jeu en groupe, développement de l’écoute et de la créativité. Lucas propose aussi des ateliers de percussions et d’accompagnement rythmique pour les groupes.",
+      "teachers": ["Lucas Bernard"],
+      "styles": ["Rock", "Funk", "Jazz", "Pop", "Musiques actuelles"],
+      "hash": "#batterie"
+    },
+    {
+      "emoji": "🎤",
+      "name": "Chant",
+      "shortDescription": "Technique vocale, interprétation, chant individuel ou en groupe, tous styles.",
+      "longDescription": "Les cours de chant abordent la technique vocale (respiration, placement de la voix, justesse), l’interprétation, la diction, le travail du répertoire (variété, classique, jazz, pop, etc.), le chant individuel ou en groupe. Sophie accompagne chaque élève dans le développement de sa voix, la gestion du trac, la préparation de concerts ou auditions, et propose des ateliers de chorale et d’expression scénique.",
+      "teachers": ["Sophie Morel"],
+      "styles": ["Variété", "Pop", "Jazz", "Classique", "Comédie musicale"],
+      "hash": "#chant"
+    },
+    {
+      "emoji": "🎶",
+      "name": "Éveil musical",
+      "shortDescription": "Pour les plus jeunes : jeux, découverte des sons, premiers instruments.",
+      "longDescription": "Pour les enfants dès 4 ans, l’éveil musical propose des jeux rythmiques, la découverte des sons, des instruments, des chansons, et le développement de l’écoute. Camille utilise une pédagogie ludique et sensorielle pour donner le goût de la musique, stimuler la créativité et préparer à l’apprentissage d’un instrument. Les séances incluent manipulation d’instruments, chant, percussions et jeux d’écoute.",
+      "teachers": ["Camille Petit"],
+      "styles": ["Découverte", "Jeux musicaux", "Initiation multi-instruments"],
+      "hash": "#eveil-musical"
+    },
+    {
+      "emoji": "🎷",
+      "name": "Saxophone",
+      "shortDescription": "Initiation et perfectionnement, travail du souffle, répertoire varié.",
+      "longDescription": "Initiation et perfectionnement au saxophone : travail du souffle, de l’embouchure, de la technique des doigts, lecture de partitions, improvisation, découverte de styles variés (jazz, classique, musiques actuelles). Antoine propose aussi des ateliers d’improvisation et d’ensemble pour jouer en groupe.",
+      "teachers": ["Antoine Girard"],
+      "styles": ["Jazz", "Classique", "Funk", "Musiques actuelles"],
+      "hash": "#saxophone"
+    },
+    {
+      "emoji": "🎺",
+      "name": "Clarinette",
+      "shortDescription": "Cours adaptés à tous, découverte de l’instrument, technique et répertoire.",
+      "longDescription": "Apprentissage de la clarinette pour débutants et avancés : technique de souffle, doigtés, articulation, lecture de partitions, interprétation de morceaux classiques ou modernes. Isabelle propose une approche ludique et progressive, adaptée à chaque élève, et organise régulièrement des ateliers de musique d’ensemble.",
+      "teachers": ["Isabelle Laurent"],
+      "styles": ["Classique", "Klezmer", "Jazz", "Musiques traditionnelles"],
+      "hash": "#clarinette"
+    },
+    {
+      "emoji": "🎵",
+      "name": "Flûte traversière",
+      "shortDescription": "Travail du souffle, technique, musicalité et plaisir de jouer en solo ou ensemble.",
+      "longDescription": "Le cours de flûte traversière met l’accent sur la maîtrise du souffle, la technique instrumentale, la musicalité et le plaisir de jouer. Découverte du répertoire classique, contemporain ou populaire, travail en solo ou en ensemble, développement de l’écoute et de l’expression musicale. Pauline propose également des ateliers de musique de chambre et d’initiation à l’improvisation.",
+      "teachers": ["Pauline Robert"],
+      "styles": ["Classique", "Contemporain", "Musiques du monde"],
+      "hash": "#flute"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+.formation-desc {
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ===== DÉTAILS DES FORMATIONS ===== */
+#cours-details {
+    margin-top: 6rem;
+}
+
+.formation-detail {
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 0.4em 1em rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    margin-bottom: 2.5rem;
+    transition: box-shadow 0.3s;
+}
+
+.formation-detail h3 {
+    color: #764ba2;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.formation-detail p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.formation-detail strong {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.formation-detail .btn {
+    margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .formation-detail {
+        padding: 1.2rem 0.7rem;
+    }
+    .formation-detail h3 {
+        font-size: 1.1rem;
+    }
+}
