@@ -1,0 +1,9 @@
+{
+  "emoji": "🎷",
+  "name": "Saxophone",
+  "shortDescription": "Initiation et perfectionnement, travail du souffle, répertoire varié.",
+  "longDescription": "Initiation et perfectionnement au saxophone : travail du souffle, de l’embouchure, de la technique des doigts, lecture de partitions, improvisation, découverte de styles variés (jazz, classique, musiques actuelles). Antoine propose aussi des ateliers d’improvisation et d’ensemble pour jouer en groupe.",
+  "teachers": ["Antoine Girard"],
+  "styles": ["Jazz", "Classique", "Funk", "Musiques actuelles"],
+  "hash": "#saxophone"
+}

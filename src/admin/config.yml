@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "formations"
+    label: "Formation"
+    folder: "src/services/formation"
+    create: true
+    identifier_field: name
+    slug: "{{name}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Nom de la formation", name: "name", widget: "text" }
+      - { label: "Description courte", name: "shortDescription", widget: "text" }
+      - { label: "Description longue", name: "longDescription", widget: "text" }
+      - { label: "Professeurs", name: "teachers", widget: "list", summary: "{{fields.item}}" }
+      - { label: "Styles", name: "styles", widget: "list", summary: "{{fields.item}}" }
+      - { label: "Nom de la section (hash)", name: "hash", widget: "string" }

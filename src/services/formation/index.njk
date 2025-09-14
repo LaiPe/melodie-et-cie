@@ -16,23 +16,23 @@ css: services/formation
     Découvrez la liste des instruments que vous pouvez apprendre avec nos professeurs passionnés.
   </p>
   {{ gallery(
-    3, 1, instruments | map("gallery")
+    3, 1, collections.formations | map("gallery")
     ) }}
 </section>
 
 <section class="section" id="cours-details">
   <h2 class="text-center">Détail des cours par instrument</h2>
 
-  {% for instrument in instruments %}
-    <article id="{{ instrument.id }}" class="formation-detail">
-      <h3>{{ instrument.emoji }} {{ instrument.name }}</h3>
+  {% for formation in collections.formations %}
+    <article id="{{ formation.hash | replace('#', '') }}" class="formation-detail">
+      <h3>{{ formation.emoji }} {{ formation.name }}</h3>
       <p>
-        <strong>Professeur :</strong> {{ instrument.teachers | join(", ") }}<br>
-        <strong>Styles :</strong> {{ instrument.styles | join(", ") }}<br>
+        <strong>Professeur :</strong> {{ formation.teachers | join(", ") }}<br>
+        <strong>Styles :</strong> {{ formation.styles | join(", ") }}<br>
         <strong>Description :</strong><br>
-        {{ instrument.longDescription }}
+        {{ formation.longDescription }}
       </p>
-      <a href="/contact" class="btn">Contactez-nous pour {{ instrument.name }}</a>
+      <a href="/contact" class="btn">Contactez-nous pour {{ formation.name }}</a>
     </article>
   {% endfor %}
 </section>

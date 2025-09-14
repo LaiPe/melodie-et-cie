@@ -1,0 +1,9 @@
+{
+  "emoji": "🎸",
+  "name": "Guitare",
+  "shortDescription": "Guitare acoustique, électrique ou basse. Apprentissage des accords, solos, rythmiques et styles variés.",
+  "longDescription": "Nos cours de guitare couvrent l’acoustique, l’électrique et la basse. Vous apprendrez les bases (accords, gammes, rythmiques), le jeu en solo, l’improvisation, la lecture de tablatures et partitions, ainsi que l’exploration de styles variés (rock, jazz, blues, pop, classique). Julien adapte sa pédagogie à chaque élève, propose des ateliers de groupe et prépare ceux qui le souhaitent à jouer en groupe ou à monter un répertoire personnel.",
+  "teachers": ["Julien Martin"],
+  "styles": ["Rock", "Blues", "Jazz", "Pop", "Classique"],
+  "hash": "#guitare"
+}

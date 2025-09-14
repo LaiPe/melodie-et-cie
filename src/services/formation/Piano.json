@@ -1,0 +1,9 @@
+{
+  "emoji": "🎹",
+  "name": "Piano",
+  "shortDescription": "Cours d’initiation, classique ou moderne. Travail technique, interprétation et accompagnement.",
+  "longDescription": "Le cours de piano s’adresse à tous, du débutant au pianiste confirmé. Vous apprendrez la lecture de partitions, la technique des mains, l’indépendance des doigts, l’interprétation d’œuvres classiques ou modernes, ainsi que l’accompagnement. Les séances sont adaptées à vos objectifs : loisir, perfectionnement, préparation aux concours ou examens. Travail sur le rythme, l’harmonie, l’improvisation et le jeu en groupe possible. Marie propose également des ateliers d’improvisation et d’accompagnement pour les élèves souhaitant explorer le jazz ou la chanson.",
+  "teachers": ["Marie Dupont"],
+  "styles": ["Classique", "Jazz", "Musiques de films", "Pop"],
+  "hash": "#piano"
+}

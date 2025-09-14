@@ -1,0 +1,9 @@
+{
+  "emoji": "🎻",
+  "name": "Violon",
+  "shortDescription": "Découverte ou perfectionnement du violon, répertoire classique ou moderne, posture et musicalité.",
+  "longDescription": "Le violon est enseigné dès le plus jeune âge. Travail de la posture, de la justesse, de la technique d’archet, du vibrato et de la musicalité. Répertoire classique, musiques traditionnelles ou modernes. Claire propose également des séances de musique d’ensemble et d’initiation à l’improvisation pour les plus avancés.",
+  "teachers": ["Claire Lefèvre"],
+  "styles": ["Classique", "Musiques traditionnelles", "Musiques de films"],
+  "hash": "#violon"
+}

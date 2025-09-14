@@ -1,0 +1,9 @@
+{
+  "emoji": "🎤",
+  "name": "Chant",
+  "shortDescription": "Technique vocale, interprétation, chant individuel ou en groupe, tous styles.",
+  "longDescription": "Les cours de chant abordent la technique vocale (respiration, placement de la voix, justesse), l’interprétation, la diction, le travail du répertoire (variété, classique, jazz, pop, etc.), le chant individuel ou en groupe. Sophie accompagne chaque élève dans le développement de sa voix, la gestion du trac, la préparation de concerts ou auditions, et propose des ateliers de chorale et d’expression scénique.",
+  "teachers": ["Sophie Morel"],
+  "styles": ["Variété", "Pop", "Jazz", "Classique", "Comédie musicale"],
+  "hash": "#chant"
+}

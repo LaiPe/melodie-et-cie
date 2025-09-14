@@ -1,0 +1,9 @@
+{
+  "emoji": "🎺",
+  "name": "Clarinette",
+  "shortDescription": "Cours adaptés à tous, découverte de l’instrument, technique et répertoire.",
+  "longDescription": "Apprentissage de la clarinette pour débutants et avancés : technique de souffle, doigtés, articulation, lecture de partitions, interprétation de morceaux classiques ou modernes. Isabelle propose une approche ludique et progressive, adaptée à chaque élève, et organise régulièrement des ateliers de musique d’ensemble.",
+  "teachers": ["Isabelle Laurent"],
+  "styles": ["Classique", "Klezmer", "Jazz", "Musiques traditionnelles"],
+  "hash": "#clarinette"
+}

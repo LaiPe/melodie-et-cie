@@ -1,0 +1,9 @@
+{
+  "emoji": "🎶",
+  "name": "Éveil musical",
+  "shortDescription": "Pour les plus jeunes : jeux, découverte des sons, premiers instruments.",
+  "longDescription": "Pour les enfants dès 4 ans, l’éveil musical propose des jeux rythmiques, la découverte des sons, des instruments, des chansons, et le développement de l’écoute. Camille utilise une pédagogie ludique et sensorielle pour donner le goût de la musique, stimuler la créativité et préparer à l’apprentissage d’un instrument. Les séances incluent manipulation d’instruments, chant, percussions et jeux d’écoute.",
+  "teachers": ["Camille Petit"],
+  "styles": ["Découverte", "Jeux musicaux", "Initiation multi-instruments"],
+  "hash": "#eveil-musical"
+}

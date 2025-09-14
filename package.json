@@ -4,8 +4,8 @@
   "description": "Environnement de test dans le cadre de mon apprentissage de Eleventy",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve",
+    "dev": "npx concurrently \"npx @11ty/eleventy --serve\" \"npx decap-server --config src/admin/config.yml --watch\"",
+    "build": "npx @11ty/eleventy --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/LaiPe/eleventy-lab#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "decap-server": "^3.3.1"
   }
 }
