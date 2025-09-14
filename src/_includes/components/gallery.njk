@@ -5,7 +5,12 @@
         font-size: var(--rem, 1rem);
         display: grid;
         gap: 2em;
-        grid-template-columns: repeat(var(--cols, 3), minmax(240px, 1fr));
+        grid-template-columns: repeat(var(--cols, 3), 1fr);
+    }
+
+    .grid-gallery a.service-link {
+        text-decoration: none;
+        color: inherit;
     }
 
     .grid-gallery__card {
