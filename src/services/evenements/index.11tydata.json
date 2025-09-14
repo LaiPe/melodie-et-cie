@@ -1,22 +1,4 @@
 {
-    "upcoming_events": [
-        {
-            "emoji": "🎵",
-            "title": "Concert Printemps — Orchestre invité",
-            "date": "2025-05-15",
-            "location": "Salle des fêtes, Lyon",
-            "descr": "Programme classique et créations locales. Billets bientôt disponibles.",
-            "href": "/events/printemps-2025"
-        },
-        {
-            "emoji": "🎶",
-            "title": "Atelier Songwriting",
-            "date": "2025-06-02",
-            "location": "Studio Mélodie & Cie",
-            "descr": "Atelier pratique pour auteurs-compositeurs — places limitées.",
-            "href": "/events/atelier-songwriting"
-        }
-    ],
     "programmable_events": [
         {
             "emoji": "🎤",

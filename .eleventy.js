@@ -17,7 +17,18 @@ export default async function(eleventyConfig) {
 
     // Filtres personnalisés
     eleventyConfig.addFilter("date", function(value) {
-        return new Date(value).toLocaleDateString('fr-FR');
+        if (!value) return "";
+        let date;
+        if (value instanceof Date) {
+            date = value;
+        } else {
+            date = new Date(value);
+            if (isNaN(date)) return value;
+        }
+        // Format : JJ/MM/AAAA HH:MM
+        return date.toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit', day: '2-digit' }) +
+            ' ' +
+            date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
     });
 
     eleventyConfig.addFilter("map", function(array, key) {
@@ -32,6 +43,7 @@ export default async function(eleventyConfig) {
         return result;
     });
     
+    // Collection personnalisée pour les formations
     eleventyConfig.addCollection("formations", async (collectionsApi) => {
         // Résoudre le chemin absolu du dossier
         const __filename = fileURLToPath(import.meta.url);
@@ -61,8 +73,25 @@ export default async function(eleventyConfig) {
                 styles: data.styles,
                 longDescription: data.longDescription
             }));
+    });
 
-      });
+    // Collection personnalisée pour les évenements à venir
+    eleventyConfig.addCollection("upcoming_events", (collectionsApi) => {
+        // Résoudre le chemin absolu du dossier
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/evenements/upcoming");
+
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => {
+                // console.log("Loading formation data from:", file);
+                const data = JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8"));
+                // console.log("Loaded formation data:", data);
+                data.__filename = file; // optionnel, pour debug ou liens
+                return data;
+            });
+    });
     
     // Configuration des dossiers de sortie
     return {

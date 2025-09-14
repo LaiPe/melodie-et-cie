@@ -11,7 +11,7 @@ css: services/evenements
 <section id="upcoming" class="section events-section">
   <h1 class="text-center">Événements à venir</h1>
 
-  {% call(slide) caroussel(upcoming_events, {autoplay: true, interval: 6000}) %}
+  {% call(slide) caroussel(collections.upcoming_events, {autoplay: true, interval: 6000}) %}
     {{ upcoming_event(slide) }}
   {% endcall %}
 </section>

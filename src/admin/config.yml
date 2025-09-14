@@ -13,7 +13,7 @@ collections:
     folder: "src/services/formation"
     create: true
     identifier_field: name
-    slug: "{{name}}"
+    slug: "{{name | slugify}}"
     editor:
       preview: false
     format: "json"
@@ -26,3 +26,21 @@ collections:
       - { label: "Professeurs", name: "teachers", widget: "list", summary: "{{fields.item}}" }
       - { label: "Styles", name: "styles", widget: "list", summary: "{{fields.item}}" }
       - { label: "Nom de la section (hash)", name: "hash", widget: "string" }
+      
+  - name: "upcoming_events"
+    label: "Événements à venir"
+    folder: "src/services/evenements/upcoming"
+    create: true
+    identifier_field: title
+    slug: "{{title | slugify}}-{{date | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string", default: "🎵" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Lieu", name: "location", widget: "string" }
+      - { label: "Lien (optionnel)", name: "href", widget: "string", required: false }
