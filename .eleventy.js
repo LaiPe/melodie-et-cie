@@ -13,14 +13,14 @@ export default async function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("map", function(array, key) {
-        console.log("Mapping on :", array, "with key:", key);
+        // console.log("Mapping on :", array, "with key:", key);
         if (!Array.isArray(array) || typeof key !== "string") {
             console.warn("Invalid arguments for 'map' filter");
             return [];
         }
-        console.log(`Mapping array of length ${array.length} by key '${key}'`);
+        // console.log(`Mapping array of length ${array.length} by key '${key}'`);
         const result = array.map(item => item[key]);
-        console.log("Mapped result:", result);
+        // console.log("Mapped result:", result);
         return result;
     });
     
