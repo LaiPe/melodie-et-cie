@@ -47,3 +47,23 @@ collections:
       - { label: "Lieu", name: "location", widget: "string" }
       - { label: "Lien (optionnel)", name: "href", widget: "string", required: false }
       - { label: "Illustration", name: "image", widget: "image"}
+
+  - name: "programmable_events"
+    label: "Événements programmables"
+    folder: "src/services/evenements/programmable"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string", default: "🎵" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Durée", name: "duration", widget: "string" }
+      - { label: "Prix", name: "price", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+      - { label: "Contenu du bouton", name: "cta_label", widget: "string" }
+      - { label: "Lien du bouton", name: "cta_link", widget: "string" }

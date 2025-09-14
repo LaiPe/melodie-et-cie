@@ -21,7 +21,7 @@ css: services/evenements
   <p class="text-center">Commandez l'une de nos prestations clés en main ou demandez une adaptation sur-mesure.</p>
 
   <div class="events-grid" role="list">
-    {% for p in programmable_events %}
+    {% for p in collections.programmable_events %}
       <article class="event-card" role="listitem" aria-labelledby="pkg-{{ loop.index }}-title">
         <div class="event-emoji" aria-hidden="true">{{ p.emoji }}</div>
         <h3 id="pkg-{{ loop.index }}-title" class="event-title">{{ p.title }}</h3>

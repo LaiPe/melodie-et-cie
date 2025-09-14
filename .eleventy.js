@@ -92,6 +92,24 @@ export default async function(eleventyConfig) {
                 return data;
             });
     });
+
+    // Collection personnalisée pour les évenements programmables
+    eleventyConfig.addCollection("programmable_events", (collectionsApi) => {
+        // Résoudre le chemin absolu du dossier
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/evenements/programmable");
+
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => {
+                // console.log("Loading formation data from:", file);
+                const data = JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8"));
+                // console.log("Loaded formation data:", data);
+                data.__filename = file; // optionnel, pour debug ou liens
+                return data;
+            });
+    });
     
     // Configuration des dossiers de sortie
     return {
