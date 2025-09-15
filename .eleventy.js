@@ -110,6 +110,76 @@ export default async function(eleventyConfig) {
                 return data;
             });
     });
+
+    // Collection Offres Production
+    eleventyConfig.addCollection("production_offres", (collectionsApi) => {
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/production/offres");
+        const order = [
+            "Production",
+            "Enregistrement",
+            "Mix",
+            "Mastering",
+            "Sound design",
+            "Collaboration à distance"
+        ];
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")))
+            .sort((a, b) => order.indexOf(a.title) - order.indexOf(b.title));
+    });
+
+    // Collection Processus Production
+    eleventyConfig.addCollection("production_processus", () => {
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/production/processus");
+        const order = [
+            "Brief",
+            "Pré-production",
+            "Tracking",
+            "Mix",
+            "Master",
+            "Livraison"
+        ];
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")))
+            .sort((a, b) => order.indexOf(a.title) - order.indexOf(b.title));
+    });
+
+    // Collection Projets Production
+    eleventyConfig.addCollection("production_projets", () => {
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/production/projets");
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")));
+    });
+
+    // Collection Forfaits Production
+    eleventyConfig.addCollection("production_forfaits", () => {
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/production/forfaits");
+        const order = ["Simple", "Premium", "Full"];
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")))
+            .sort((a, b) => order.indexOf(a.title) - order.indexOf(b.title)); // Tri arbitraire
+    });
+
+    // Collection FAQ Production
+    eleventyConfig.addCollection("production_faq", () => {
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        const dir = path.join(__dirname, "src/services/production/faq");
+        return fs.readdirSync(dir)
+            .filter(file => file.endsWith(".json"))
+            .map(file => JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")));
+    });
     
     // Configuration des dossiers de sortie
     return {

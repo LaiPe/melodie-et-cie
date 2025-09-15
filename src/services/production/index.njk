@@ -2,6 +2,9 @@
 layout: layouts/base.njk
 title: Production Musicale
 description: Production musicale sur mesure — composition, enregistrement, mix et mastering pour artistes et projets audiovisuels.
+"subtitle_hero": "Production musicale sur mesure — du premier sketch au master prêt à diffuser. Approche hybride analogique/numérique, axée sur l'émotion et la clarté sonore."
+"cta_label": "Demander un devis"
+"cta_link": "/contact"
 ---
 
 {% from "components/hero.njk" import hero %}
@@ -25,7 +28,7 @@ description: Production musicale sur mesure — composition, enregistrement, mix
 
 <section id="offres" class="section">
   <h2 class="text-center">Nos Offres</h2>
-  {{ gallery(3, 0.9, offres) }}
+  {{ gallery(3, 0.9, collections.production_offres) }}
 </section>
 
 <section id="processus" class="section">
@@ -33,22 +36,22 @@ description: Production musicale sur mesure — composition, enregistrement, mix
   <p class="text-center">
     Chaque projet est unique. Voici les étapes clés de notre processus de production musicale, conçues pour garantir un résultat à la hauteur de vos attentes.
   </p>
-  {{ timeline(processus) }}
+  {{ timeline(collections.production_processus) }}
 </section>
 
 <section id="projets" class="section">
   <h2 class="text-center">Exemples de projets</h2>
-  {{ projects(3, projets) }}
+  {{ projects(3, collections.production_projets) }}
 </section>
 
 <section id="forfaits" class="section">
   <h2 class="text-center">Forfaits</h2>
-  {{ pricing(3, forfaits, offres) }}
+  {{ pricing(3, collections.production_forfaits, collections.production_offres) }}
 </section>
 
 <section id="faq" class="section">
   <h2 class="text-center">FAQ</h2>
-  {{ faq(faqdata, false, "production-faq") }}
+  {{ faq(collections.production_faq, false, "production-faq") }}
 </section>
 
 {{cta()}}

@@ -67,3 +67,80 @@ collections:
       - { label: "Description", name: "descr", widget: "text" }
       - { label: "Contenu du bouton", name: "cta_label", widget: "string" }
       - { label: "Lien du bouton", name: "cta_link", widget: "string" }
+
+  - name: "production_offres"
+    label: "Offres de production"
+    folder: "src/services/production/offres"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+
+  - name: "production_processus"
+    label: "Étapes du processus"
+    folder: "src/services/production/processus"
+    create: true
+    identifier_field: title
+    summary: "{{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+
+  - name: "production_projets"
+    label: "Projets réalisés"
+    folder: "src/services/production/projets"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+      - { label: "Lien", name: "href", widget: "string", required: false }
+
+  - name: "production_forfaits"
+    label: "Forfaits"
+    folder: "src/services/production/forfaits"
+    create: true
+    identifier_field: title
+    summary: "{{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Prix", name: "price", widget: "string" }
+      - { label: "Détails", name: "details", widget: "list", summary: "{{fields.item}}" }
+
+  - name: "production_faq"
+    label: "FAQ Production"
+    folder: "src/services/production/faq"
+    create: true
+    identifier_field: question
+    summary: "{{question}}"
+    slug: "{{question | slugify}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Réponse", name: "response", widget: "text" }
