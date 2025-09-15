@@ -45,6 +45,10 @@
     color: #444; 
     line-height: 1.6; 
   }
+  .acc__panel ul { 
+    padding-left: 1.2rem; 
+    margin: 0.5rem 0; 
+  }
   </style>
   
   <div class="acc" id="{{ idPrefix }}">
@@ -64,7 +68,7 @@
           role="region" 
           aria-labelledby="{{ idPrefix }}-btn-{{ loop.index }}" 
           hidden>
-          {{ item.response | safe }}
+          {{ item.response | markdown | safe }}
         </div>
       </div>
     {% endfor %}

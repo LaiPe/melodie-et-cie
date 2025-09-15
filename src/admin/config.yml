@@ -143,4 +143,4 @@ collections:
     extension: "json"
     fields:
       - { label: "Question", name: "question", widget: "string" }
-      - { label: "Réponse", name: "response", widget: "text" }
+      - { label: "Réponse", name: "response", widget: "markdown" }

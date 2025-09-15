@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import md from "markdown-it";
 
 export default async function(eleventyConfig) {
     // Copier les assets statiques
@@ -41,6 +42,14 @@ export default async function(eleventyConfig) {
         const result = array.map(item => item[key]);
         // console.log("Mapped result:", result);
         return result;
+    });
+
+    eleventyConfig.addFilter("markdown", function(value) {
+        if (typeof value !== "string") {
+            console.warn("Invalid argument for 'markdown' filter");
+            return value;
+        }
+        return md().render(value);
     });
     
     // Collection personnalisée pour les formations
