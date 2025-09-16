@@ -143,6 +143,20 @@ footer {
     border-top: 1px solid #34495e;
 }
 
+.site-author {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+.site-author a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.site-author a:hover {
+    color: #a757f7;
+    text-decoration: underline;
+}
+
 /* ===== UTILITY CLASSES ===== */
 .btn {
     display: inline-block;
