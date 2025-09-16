@@ -144,3 +144,27 @@ collections:
     fields:
       - { label: "Question", name: "question", widget: "string" }
       - { label: "Réponse", name: "response", widget: "markdown" }
+
+  - name: "infos_pages"
+    label: "Infos pages"
+    files:
+      - file: "src/index.11tydata.json"
+        label: "Page d'accueil"
+        name: "homepage"
+        editor:
+          preview: false
+        fields:
+          - { label: "Titre section À propos", name: "about_title", widget: "string", default: "Qui sommes-nous ?" }
+          - { label: "Paragraphe 1 À propos", name: "about_p1", widget: "text" }
+          - { label: "Paragraphe 2 À propos", name: "about_p2", widget: "text" }
+          - { label: "Texte bouton À propos", name: "about_btn", widget: "string", default: "En savoir plus" }
+          - label: "Témoignages"
+            name: "testimonials"
+            widget: "list"
+            min: 3
+            max: 3
+            hint : "* Trois témoignages obligatoires pour le design"
+            fields:
+              - { label: "Texte", name: "text", widget: "text" }
+              - { label: "Auteur", name: "author", widget: "string" }
+              - { label: "Étoiles", name: "stars", widget: "number", default: 5, min: 1, max: 5 }

@@ -26,16 +26,10 @@ css: index
 <section class="section about-section">
     <div class="about-content">
         <div class="about-text">
-            <h2>Qui sommes-nous ?</h2>
-            <p>
-                Mélodie & Cie est une entreprise passionnée par la musique et la culture. Depuis plus de 10 ans, 
-                nous accompagnons artistes, entreprises et particuliers dans leurs projets musicaux.
-            </p>
-            <p>
-                Notre équipe d'experts combine créativité artistique et expertise technique pour offrir 
-                des solutions sur mesure qui répondent parfaitement à vos besoins.
-            </p>
-            <a href="/contact" class="btn">En savoir plus</a>
+            <h2>{{ about_title }}</h2>
+            <p>{{ about_p1 }}</p>
+            <p>{{ about_p2 }}</p>
+            <a href="/contact" class="btn">{{ about_btn }}</a>
         </div>
         <div class="about-visual">
             <div class="music-icon">🎵</div>
@@ -47,32 +41,13 @@ css: index
 <section class="section">
     <h2 class="text-center">Ce que disent nos clients</h2>
     <div class="testimonials-grid">
+        {% for t in testimonials %}
         <div class="testimonial-card">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-                "Mélodie & Cie a transformé notre événement d'entreprise en un moment magique. 
-                Leur professionnalisme et leur créativité sont exceptionnels."
-            </p>
-            <strong class="testimonial-author">- Marie Dubois, Directrice Marketing</strong>
+            <div class="testimonial-stars">{% for i in range(t.stars) %}⭐{% endfor %}</div>
+            <p class="testimonial-text">{{ t.text }}</p>
+            <strong class="testimonial-author">- {{ t.author }}</strong>
         </div>
-        
-        <div class="testimonial-card">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-                "Grâce à leur formation musicale, j'ai pu développer mes compétences en piano 
-                et réaliser mon rêve de jouer en public."
-            </p>
-            <strong class="testimonial-author">- Thomas Martin, Pianiste amateur</strong>
-        </div>
-        
-        <div class="testimonial-card">
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-                "La production de notre album a été un véritable succès. L'équipe a su 
-                capturer l'essence de notre musique."
-            </p>
-            <strong class="testimonial-author">- Les Harmonies du Soir, Groupe musical</strong>
-        </div>
+        {% endfor %}
     </div>
 </section>
 

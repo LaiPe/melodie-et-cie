@@ -1,0 +1,23 @@
+{
+  "about_title": "Qui sommes-nous ?",
+  "about_p1": "Mélodie & Cie est une entreprise passionnée par la musique et la culture. Depuis plus de 10 ans, nous accompagnons artistes, entreprises et particuliers dans leurs projets musicaux.",
+  "about_p2": "Notre équipe d'experts combine créativité artistique et expertise technique pour offrir des solutions sur mesure qui répondent parfaitement à vos besoins.",
+  "about_btn": "En savoir plus",
+  "testimonials": [
+    {
+      "text": "Mélodie & Cie a transformé notre événement d'entreprise en un moment magique. Leur professionnalisme et leur créativité sont exceptionnels.",
+      "author": "Marie Dubois, Directrice Marketing",
+      "stars": 5
+    },
+    {
+      "text": "Grâce à leur formation musicale, j'ai pu développer mes compétences en piano et réaliser mon rêve de jouer en public.",
+      "author": "Thomas Martin, Pianiste amateur",
+      "stars": 5
+    },
+    {
+      "text": "La production de notre album a été un véritable succès. L'équipe a su capturer l'essence de notre musique.",
+      "author": "Les Harmonies du Soir, Groupe musical",
+      "stars": 5
+    }
+  ]
+}
