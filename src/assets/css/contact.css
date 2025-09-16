@@ -10,6 +10,9 @@ main .container {
   padding: 2rem 1.5rem;
   width: 60%;
 }
+.contact-info h1 {
+  margin-bottom: 1rem;
+}
 
 .staff-list {
   margin-top: 1.5rem;
@@ -53,6 +56,15 @@ main .container {
   border-radius: 0.4em;
   font-size: 1rem;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  main .container {
+    flex-direction: column;
+  }
+  .contact-info, .contact-form-section {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
