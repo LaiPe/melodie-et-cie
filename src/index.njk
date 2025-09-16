@@ -62,3 +62,21 @@ css: index
         <a href="/contact" class="btn cta-btn">Commencer maintenant</a>
     </div>
 </section>
+
+<!-- Redirection pour les liens d'invitation Netlify -> renvoie vers /admin en gardant les paramètres -->
+<script>
+(function () {
+  var q = (location.search || '') + (location.hash || '');
+  var s = q.toLowerCase();
+  var looksLikeInvite = s.indexOf('invite') !== -1 ||
+                        s.indexOf('invitation') !== -1 ||
+                        s.indexOf('token') !== -1 ||
+                        s.indexOf('confirmation') !== -1 ||
+                        s.indexOf('access_token') !== -1 ||
+                        location.pathname.indexOf('/.netlify/identity') !== -1;
+  if (looksLikeInvite) {
+    var dest = '/admin' + location.search + location.hash;
+    window.location.replace(dest);
+  }
+})();
+</script>
