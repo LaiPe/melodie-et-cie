@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://melodie-et-cie.netlify.app/*"
+to = "https://melodie-et-cie.sandbox.leopeyronnet.fr/:splat"
+status = 301
+force = true
