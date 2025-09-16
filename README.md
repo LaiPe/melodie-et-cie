@@ -35,13 +35,12 @@ Les fichiers générés seront dans le dossier `_site/`.
 ├── src/
 │   ├── index.njk                # Page d'accueil (template Nunjucks)
 │   ├── index.11tydata.json      # Données dynamiques de la page d'accueil
-│   ├── services/                # Données atomiques (formations, production, etc.)
-│   ├── staff/                   # Membres du staff (JSON)
+│   ├── services/                # Datas et templates (formations, production, etc.)
+│   ├── admin/                   # Décap CMS (Netlify CMS)
 │   └── _includes/               # Composants et layouts Nunjucks
 ├── _site/                       # Fichiers générés
 ├── .eleventy.js                 # Configuration Eleventy
-├── package.json                 # Dépendances et scripts
-└── src/admin/                   # Décap CMS (Netlify CMS)
+└── package.json                 # Dépendances et scripts
 ```
 
 ## ✨ Fonctionnalités principales
