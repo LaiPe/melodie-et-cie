@@ -21,6 +21,36 @@ npm run dev
 
 Le site sera accessible à l'adresse : http://localhost:8080
 
+## 🧪 Tests automatisés
+
+Le projet inclut une suite de tests E2E (End-to-End) pour vérifier le bon fonctionnement du site et du back-office CMS.
+
+### Lancement des tests (recommandé)
+
+```bash
+npm test
+```
+
+Cette commande :
+- ✅ Vérifie et crée automatiquement l'environnement virtuel Python si nécessaire
+- ✅ Installe automatiquement les dépendances Python manquantes
+- ✅ Lance tous les tests (navigation + back-office CMS)
+- ✅ Fonctionne sur Windows, macOS et Linux
+
+### Lancement direct (si l'environnement est déjà configuré)
+
+```bash
+npm run test:direct
+```
+
+### Tests inclus
+
+1. **Test de navigation interne** : Vérifie tous les liens du site
+2. **Test back-office CMS** : Test complet de création/modification/suppression de contenu
+
+> **Note** : Les tests nécessitent que le serveur de développement soit lancé (`npm run dev`) dans un autre terminal.
+
+
 ## 🏗️ Générer le site pour la production
 
 ```bash

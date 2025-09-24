@@ -15,6 +15,11 @@ export default async function(eleventyConfig) {
     eleventyConfig.addWatchTarget("src/admin");
     eleventyConfig.addWatchTarget("src/**/*.11tydata.json");
     eleventyConfig.addWatchTarget("src/**/*.11tydata.js");
+    
+    // Surveillance spécifique des fichiers de contenu
+    eleventyConfig.addWatchTarget("src/services/formation/*.json");
+    eleventyConfig.addWatchTarget("src/services/evenements/**/*.json");
+    eleventyConfig.addWatchTarget("src/services/production/**/*.json");
 
     // Filtres personnalisés
     eleventyConfig.addFilter("date", function(value) {
