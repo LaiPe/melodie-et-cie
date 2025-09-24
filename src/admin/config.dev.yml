@@ -1,0 +1,171 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Active le backend local pour le développement
+local_backend: true
+
+media_folder: "src/assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "formations"
+    label: "Formation"
+    folder: "src/services/formation"
+    create: true
+    identifier_field: name
+    summary: "{{emoji}} {{name}}"
+    slug: "{{name | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Nom de la formation", name: "name", widget: "text" }
+      - { label: "Description courte", name: "shortDescription", widget: "text" }
+      - { label: "Description longue", name: "longDescription", widget: "text" }
+      - { label: "Professeurs", name: "teachers", widget: "list", summary: "{{fields.item}}" }
+      - { label: "Styles", name: "styles", widget: "list", summary: "{{fields.item}}" }
+      - { label: "Nom de la section (hash)", name: "hash", widget: "string" }
+
+  - name: "upcoming_events"
+    label: "Événements à venir"
+    folder: "src/services/evenements/upcoming"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}-{{date | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string", default: "🎵" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Lieu", name: "location", widget: "string" }
+      - { label: "Lien (optionnel)", name: "href", widget: "string", required: false }
+      - { label: "Illustration", name: "image", widget: "image"}
+
+  - name: "programmable_events"
+    label: "Événements programmables"
+    folder: "src/services/evenements/programmable"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string", default: "🎵" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Durée", name: "duration", widget: "string" }
+      - { label: "Prix", name: "price", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+      - { label: "Contenu du bouton", name: "cta_label", widget: "string" }
+      - { label: "Lien du bouton", name: "cta_link", widget: "string" }
+
+  - name: "production_offres"
+    label: "Offres de production"
+    folder: "src/services/production/offres"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+
+  - name: "production_processus"
+    label: "Étapes du processus"
+    folder: "src/services/production/processus"
+    create: true
+    identifier_field: title
+    summary: "{{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+
+  - name: "production_projets"
+    label: "Projets réalisés"
+    folder: "src/services/production/projets"
+    create: true
+    identifier_field: title
+    summary: "{{emoji}} {{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Emoji", name: "emoji", widget: "string" }
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "descr", widget: "text" }
+      - { label: "Lien", name: "href", widget: "string", required: false }
+
+  - name: "production_forfaits"
+    label: "Forfaits"
+    folder: "src/services/production/forfaits"
+    create: true
+    identifier_field: title
+    summary: "{{title}}"
+    slug: "{{title | slugify}}"
+    editor:
+      preview: false
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Prix", name: "price", widget: "string" }
+      - { label: "Détails", name: "details", widget: "list", summary: "{{fields.item}}" }
+
+  - name: "production_faq"
+    label: "FAQ Production"
+    folder: "src/services/production/faq"
+    create: true
+    identifier_field: question
+    summary: "{{question}}"
+    slug: "{{question | slugify}}"
+    format: "json"
+    extension: "json"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Réponse", name: "response", widget: "markdown" }
+
+  - name: "infos_pages"
+    label: "Infos pages"
+    files:
+      - file: "src/index.11tydata.json"
+        label: "Page d'accueil"
+        name: "homepage"
+        editor:
+          preview: false
+        fields:
+          - { label: "Titre section À propos", name: "about_title", widget: "string", default: "Qui sommes-nous ?" }
+          - { label: "Paragraphe 1 À propos", name: "about_p1", widget: "text" }
+          - { label: "Paragraphe 2 À propos", name: "about_p2", widget: "text" }
+          - { label: "Texte bouton À propos", name: "about_btn", widget: "string", default: "En savoir plus" }
+          - label: "Témoignages"
+            name: "testimonials"
+            widget: "list"
+            min: 3
+            max: 3
+            hint : "* Trois témoignages obligatoires pour le design"
+            fields:
+              - { label: "Texte", name: "text", widget: "text" }
+              - { label: "Auteur", name: "author", widget: "string" }
+              - { label: "Étoiles", name: "stars", widget: "number", default: 5, min: 1, max: 5 }

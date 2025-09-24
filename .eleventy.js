@@ -8,7 +8,7 @@ export default async function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
 
     // Copie du dossier admin
-    eleventyConfig.addPassthroughCopy("src/admin");
+    eleventyConfig.addPassthroughCopy("src/admin/*.yml");
     
     // Watchers pour rebuild automatique
     eleventyConfig.addWatchTarget("src/assets");
